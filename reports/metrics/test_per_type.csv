@@ -1,0 +1,5 @@
+type,URLs,metric,value
+benign,87570,false positive rate,0.008427543679342241
+defacement,14292,recall,0.6445563951861181
+phishing,27425,recall,0.3193436645396536
+malware,3345,recall,0.8457399103139014

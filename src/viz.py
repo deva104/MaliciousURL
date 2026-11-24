@@ -20,6 +20,11 @@ TYPE_ORDER = ["benign", "defacement", "phishing", "malware"]
 LABEL_COLORS = {0: "#2a78d6", 1: "#eb6834"}
 LABEL_NAMES = {0: "benign", 1: "malicious"}
 BINARY_PALETTE = {"benign": "#2a78d6", "malicious": "#eb6834"}
+# Model families (Step 2). Validated CVD-safe order; avoids blue/orange, which
+# mean benign/malicious in every other chart.
+FAMILY_COLORS = {"single": "#6250d6", "bagging": "#1baf7a", "boosting": "#eda100", "combination": "#e87ba4"}
+# Up to five model curves in one chart (validated adjacent order).
+SERIES_COLORS = ["#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4"]
 NEUTRAL = "#898781"
 INK = "#0b0b0b"
 INK_2 = "#52514e"

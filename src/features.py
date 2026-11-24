@@ -594,8 +594,19 @@ class UrlFeatureExtractor:
         return X[self.feature_names]
 
     def transform_one(self, url: str) -> pd.DataFrame:
-        """Convenience for the API: one URL -> 1-row DataFrame in model order."""
-        return self.transform([url])
+        """Fast path for the API: one URL -> 1-row DataFrame in model order.
+
+        Uses the same per-URL code as `transform` (``_safe_tuple`` + ``parse_url``)
+        but skips the batch machinery (factorize, per-column casts), which cost
+        ~10 ms per call. Values are identical (asserted in tests).
+        """
+        vals = dict(zip(LEXICAL_FEATURES, _safe_tuple(url)))
+        try:
+            tld = parse_url(url).tld
+        except Exception:  # pragma: no cover - parse_url is defensive
+            tld = NO_TLD
+        vals["tld_malicious_rate"] = float(self.tld_rates_.get(tld, self.prior_))
+        return pd.DataFrame([[vals[c] for c in self.feature_names]], columns=self.feature_names)
 
     def __repr__(self) -> str:  # pragma: no cover
         fitted = hasattr(self, "tld_rates_")

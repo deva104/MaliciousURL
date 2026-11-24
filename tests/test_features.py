@@ -163,6 +163,15 @@ def test_extractor_tld_encoding_and_unseen_prior():
     assert one.shape == (1, len(fx.feature_names))
 
 
+def test_transform_one_fast_path_equals_batch_transform():
+    urls = ["a.com", "b.tk/login", "c.org", "d.tk", "http://192.168.1.1/x.exe", "", "日本語.jp/パス",
+            "https://www.google.com/search?q=x", "paypal.com.secure-login.tk", "never.zzzunknowntld"]
+    fx = UrlFeatureExtractor(m=2).fit(urls[:4], [0, 1, 0, 1])
+    batch = fx.transform(urls).reset_index(drop=True)
+    one = pd.concat([fx.transform_one(u) for u in urls], ignore_index=True)
+    pd.testing.assert_frame_equal(one, batch, check_dtype=False)
+
+
 def test_group_folds_keep_groups_together_and_balanced():
     rng = np.random.default_rng(1)
     groups = rng.choice([f"d{i}" for i in range(2000)], size=20_000)

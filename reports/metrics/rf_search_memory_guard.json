@@ -1,0 +1,12 @@
+{
+  "worst_case": "400 trees, max_depth None, min_samples_leaf 1, max_samples None",
+  "fold_train_rows": 100967,
+  "worst_model_mb": 761,
+  "worker_overhead_mb": 300.0,
+  "per_worker_worst_mb": 1061,
+  "free_ram_mb_at_start": 7044,
+  "budget_mb (free - 1 GB)": 6044,
+  "n_jobs_requested": -1,
+  "n_jobs_used": 5,
+  "worst_total_mb": 5306
+}

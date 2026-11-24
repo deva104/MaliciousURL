@@ -1,0 +1,8 @@
+note,false positives,false negatives,total
+CMS / Joomla-style query,77,463,540
+IP-address host,5,0,5
+"bare domain, no path",100,7286,7386
+free hosting / site builder,0,71,71
+label noise: PayPal kit path labelled benign,11,0,11
+other,525,15972,16497
+very long URL,20,471,491

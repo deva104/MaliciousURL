@@ -1,0 +1,4 @@
+pattern,URLs,detected,recall,median_proba
+free hosting / site builder,243,225,0.9259259259259259,0.9935609
+own domain,54,11,0.2037037037037037,0.6309053
+URL shortener,1,0,0.0,0.7103714

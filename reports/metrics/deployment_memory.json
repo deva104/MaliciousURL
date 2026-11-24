@@ -1,0 +1,8 @@
+{
+  "rss_before_mb": 195.6,
+  "rss_after_extractor_mb": 195.7,
+  "rss_after_model_mb": 246.6,
+  "rss_after_first_prediction_mb": 257.0,
+  "load_time_s": 0.172,
+  "model": "voting_tuned_noiseclean"
+}

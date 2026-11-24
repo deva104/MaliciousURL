@@ -135,10 +135,10 @@ Jupyter, pytest, joblib, FastAPI, Docker, Render, Chrome Extensions (Manifest V3
 | Step | Deliverable | Status |
 |---|---|---|
 | 1 | Data collection, preprocessing, EDA (notebook + report) + this proposal | done |
-| 2 | Model training and comparison (13 models) + RF tuning | next |
-| 3 | Evaluation report (metrics, error analysis, fresh-URL test) | planned |
-| 4 | FastAPI service in Docker on Render | planned |
-| 5 | Chrome extension + final report and presentation | planned |
+| 2 | Model training + evaluation: 13-model comparison, RF and booster tuning, threshold, selection, test / OpenPhish / real-world evaluation (notebook + report) | done |
+| 3 | FastAPI service in Docker, deployed on Render | next |
+| 4 | Chrome extension | planned |
+| 5 | Final report + presentation | planned |
 
 ## References
 

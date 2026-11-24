@@ -4,8 +4,11 @@ Computational Intelligence course project. A model classifies a URL as **benign*
 **malicious** (phishing, malware or defacement) **from the URL string alone**. It will be served by a
 FastAPI service and called by a Chrome extension for every page the user opens.
 
-**Status:** Step 1 (data collection, preprocessing, EDA) is complete. Steps 2–5 (models,
-evaluation, API, extension) are still to come.
+**Status:**
+- Step 1 (data collection, preprocessing, EDA): complete.
+- Step 2 (training, comparison, tuning, evaluation): complete.
+- Still to come: step 3 (FastAPI + Docker + Render), step 4 (Chrome extension) and step 5
+  (final report).
 
 ## Folder structure
 
@@ -62,6 +65,46 @@ On macOS/Linux, use `python3 -m venv .venv` and `.venv/bin/python` instead.
    ```powershell
    .\.venv\Scripts\python.exe -m jupyter nbconvert --to html --output-dir reports notebooks\01_data_preprocessing_eda.ipynb
    ```
+
+## How to run Step 2 (model training and evaluation)
+
+1. (Optional) Re-run the pre-flight benchmark and time plan:
+   ```powershell
+   .\.venv\Scripts\python.exe scripts\step2_benchmark.py
+   ```
+2. Execute the training notebook. The first run trains all models (~30 min on 24 cores). Every
+   fitted model, prediction and timing is cached in `models/cache/` (gitignored), so later runs
+   reuse the cache and finish in minutes.
+   ```powershell
+   .\.venv\Scripts\python.exe -m jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=7200 notebooks\02_model_training_evaluation.ipynb
+   ```
+   ```powershell
+   .\.venv\Scripts\python.exe -m jupyter nbconvert --to html --output-dir reports notebooks\02_model_training_evaluation.ipynb
+   ```
+3. Run all tests (features + prediction API):
+   ```powershell
+   .\.venv\Scripts\python.exe -m pytest
+   ```
+
+Outputs:
+- `models/best_model.joblib` and `models/model_metadata.json`: the selected model, its
+  threshold, the feature list with its SHA-256, and all metrics
+- `reports/metrics/*.csv`: comparison tables and timings
+- `reports/figures/14_*.png` onwards
+- `docs/02_model_training_evaluation_report.md`
+
+Extra test sets in `data/external/` (never used for training):
+- the OpenPhish snapshot
+- `realworld_benign_urls.csv`: 86 legitimate URLs, committed before training
+
+## Predicting a URL (what the API will call)
+
+```python
+from src.predict import predict_url, predict_batch
+predict_url("https://www.google.com/search?q=x")
+# {'url': ..., 'normalized_url': 'google.com/search?q=x', 'probability': ..., 'is_malicious': False,
+#  'threshold': ..., 'reasons': [...]}
+```
 
 ## Using the feature extractor (e.g. in the API)
 

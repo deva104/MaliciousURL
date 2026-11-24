@@ -321,3 +321,43 @@ def grouped_split(df: pd.DataFrame, group_col: str = "registered_domain",
     split = np.where(fold < train_folds, "train",
                      np.where(fold < train_folds + val_folds, "val", "test"))
     return pd.Series(split, index=df.index, name="split")
+
+
+# --------------------------------------------------------------------------- #
+# 5. Grouped CV folds and grouped samples (Step 2)
+# --------------------------------------------------------------------------- #
+def grouped_fold_ids(groups, n_splits: int = 3, random_state: int = RANDOM_STATE) -> np.ndarray:
+    """Fold id per row; every group (registered domain) lies in exactly one fold.
+
+    Reuses the O(n) seeded assignment from Step 1 (UrlFeatureExtractor.group_folds).
+    Never use sklearn's GroupKFold(shuffle=True) here: it took ~26 min on ~225k groups.
+    """
+    from .features import UrlFeatureExtractor
+    return UrlFeatureExtractor.group_folds(groups, n_splits, random_state)
+
+
+def grouped_cv_splits(groups, n_splits: int = 3,
+                      random_state: int = RANDOM_STATE) -> list[tuple[np.ndarray, np.ndarray]]:
+    """Explicit list of (train_idx, test_idx) for any sklearn `cv=` argument."""
+    fold = grouped_fold_ids(groups, n_splits, random_state)
+    return [(np.flatnonzero(fold != k), np.flatnonzero(fold == k)) for k in range(n_splits)]
+
+
+def grouped_sample(df: pd.DataFrame, n_rows: int, group_col: str = "registered_domain",
+                   label_col: str = "label", random_state: int = RANDOM_STATE) -> np.ndarray:
+    """Positional indices of a ~n_rows sample made of WHOLE domain groups, keeping
+    the class ratio: groups are split by their majority label and each stratum
+    contributes the same fraction of its rows."""
+    rng = np.random.default_rng(random_state)
+    codes, uniques = pd.factorize(df[group_col])
+    sizes = np.bincount(codes, minlength=len(uniques))
+    malicious = np.bincount(codes, weights=df[label_col].to_numpy(dtype=float), minlength=len(uniques))
+    majority = (malicious / sizes >= 0.5).astype(int)
+    frac = min(1.0, n_rows / len(df))
+    chosen = np.zeros(len(uniques), dtype=bool)
+    for cls in (0, 1):
+        ids = rng.permutation(np.flatnonzero(majority == cls))
+        cum = np.cumsum(sizes[ids])
+        k = int(np.searchsorted(cum, frac * cum[-1])) + 1 if len(ids) else 0
+        chosen[ids[:k]] = True
+    return np.flatnonzero(chosen[codes])

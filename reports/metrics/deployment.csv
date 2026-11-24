@@ -1,0 +1,11 @@
+,value
+model,Soft Voting (tuned members) [noise removed]
+threshold,0.8
+"file size (MB, compress=3)",13.31
+"latency median (ms, 1 thread, incl. features)",14.12
+latency p95 (ms),19.83
+"batch throughput (URLs/s, 1 thread)",6306
+process RSS before loading (MB),195.6
+RSS after extractor (MB),195.7
+RSS after model (MB),246.6
+model load time (s),0.172
