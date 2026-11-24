@@ -1,0 +1,185 @@
+{
+  "base_url": "https://malicious-url-api.onrender.com",
+  "timestamp_utc": "2026-11-24T18:24:16+00:00",
+  "first_request_health": {
+    "status": 200,
+    "ms": 197.8,
+    "body": {
+      "status": "ok",
+      "model_loaded": true,
+      "model": "Soft Voting (tuned members) [noise removed]",
+      "model_version": "voting_tuned_noiseclean@2026-11-24",
+      "uptime_s": 151.7
+    },
+    "note": "includes cold start if the free instance was asleep"
+  },
+  "warm_health_ms": {
+    "median": 89.25,
+    "max": 214.9
+  },
+  "GET /": {
+    "status": 200,
+    "ms": 78.9
+  },
+  "GET /docs": {
+    "status": 200,
+    "ms": 83.0
+  },
+  "GET /openapi.json": {
+    "status": 200,
+    "ms": 90.1
+  },
+  "GET /model-info": {
+    "status": 200,
+    "ms": 81.4,
+    "model": "Soft Voting (tuned members) [noise removed]",
+    "threshold": 0.8,
+    "n_features": 43
+  },
+  "predict": [
+    {
+      "kind": "safe",
+      "url": "https://www.google.com/search?q=machine+learning",
+      "status": 200,
+      "verdict": "safe",
+      "probability": 0.073784,
+      "decided_by": "trusted_list",
+      "server_latency_ms": 12.838,
+      "round_trip_ms": 96.1
+    },
+    {
+      "kind": "safe",
+      "url": "https://github.com/scikit-learn/scikit-learn",
+      "status": 200,
+      "verdict": "safe",
+      "probability": 0.145458,
+      "decided_by": "trusted_list",
+      "server_latency_ms": 14.806,
+      "round_trip_ms": 101.7
+    },
+    {
+      "kind": "safe",
+      "url": "https://www.onlinesbi.sbi/",
+      "status": 200,
+      "verdict": "safe",
+      "probability": 0.30575,
+      "decided_by": "trusted_list",
+      "server_latency_ms": 15.811,
+      "round_trip_ms": 97.4
+    },
+    {
+      "kind": "safe",
+      "url": "https://mitaoe.ac.in/",
+      "status": 200,
+      "verdict": "safe",
+      "probability": 0.10697,
+      "decided_by": "trusted_list",
+      "server_latency_ms": 15.15,
+      "round_trip_ms": 104.7
+    },
+    {
+      "kind": "safe",
+      "url": "https://en.wikipedia.org/wiki/Random_forest",
+      "status": 200,
+      "verdict": "safe",
+      "probability": 0.051173,
+      "decided_by": "trusted_list",
+      "server_latency_ms": 16.426,
+      "round_trip_ms": 325.3
+    },
+    {
+      "kind": "openphish",
+      "url": "https://www.belepes-telekom-hu.vh22325.vh.net.pl/",
+      "status": 200,
+      "verdict": "malicious",
+      "probability": 0.880457,
+      "decided_by": "model",
+      "server_latency_ms": 13.63,
+      "round_trip_ms": 188.4
+    },
+    {
+      "kind": "openphish",
+      "url": "https://belepes-telekom-hu.vh22325.vh.net.pl/",
+      "status": 200,
+      "verdict": "malicious",
+      "probability": 0.880457,
+      "decided_by": "model",
+      "server_latency_ms": 0.074,
+      "round_trip_ms": 93.2
+    },
+    {
+      "kind": "openphish",
+      "url": "http://id2140.business-support-partner.com/",
+      "status": 200,
+      "verdict": "safe",
+      "probability": 0.759308,
+      "decided_by": "model",
+      "server_latency_ms": 12.36,
+      "round_trip_ms": 103.7
+    },
+    {
+      "kind": "openphish",
+      "url": "http://dan-san2006.github.io/Netflix_gt",
+      "status": 200,
+      "verdict": "malicious",
+      "probability": 0.982959,
+      "decided_by": "model",
+      "server_latency_ms": 12.206,
+      "round_trip_ms": 93.7
+    },
+    {
+      "kind": "openphish",
+      "url": "https://ephemeral-squirrel-f84ee4.netlify.app/",
+      "status": 200,
+      "verdict": "malicious",
+      "probability": 0.997256,
+      "decided_by": "model",
+      "server_latency_ms": 104.838,
+      "round_trip_ms": 186.3
+    }
+  ],
+  "predict_summary": {
+    "safe_correct": 5,
+    "openphish_detected": 4,
+    "median_round_trip_ms": 102.7,
+    "median_server_latency_ms": 14.218
+  },
+  "POST /predict/batch": {
+    "status": 200,
+    "round_trip_ms": 81.8,
+    "count": 10,
+    "server_latency_ms": 0.328
+  },
+  "invalid_input_status": 422,
+  "cors_allow_origin": "*",
+  "load_test_concurrency_5": {
+    "base_url": "https://malicious-url-api.onrender.com",
+    "requests": 200,
+    "concurrency": 5,
+    "completed": 200,
+    "errors": 0,
+    "status_codes": {
+      "200": 200
+    },
+    "wall_time_s": 24.69,
+    "requests_per_s": 8.1,
+    "latency_ms": {
+      "p50": 609.97,
+      "p95": 906.75,
+      "p99": 1220.68,
+      "mean": 614.92,
+      "max": 1394.44
+    },
+    "first_health_ms": 389.3,
+    "health": {
+      "status": "ok",
+      "model_loaded": true,
+      "model": "Soft Voting (tuned members) [noise removed]",
+      "model_version": "voting_tuned_noiseclean@2026-11-24",
+      "uptime_s": 155.3
+    },
+    "client": "Windows-11-10.0.26300-SP0",
+    "timestamp_utc": "2026-11-24T18:24:45+00:00",
+    "note": "about 50% real URLs (repeats -> cache hits) and 50% unique URLs (cache misses)"
+  }
+}

@@ -4,11 +4,22 @@ Computational Intelligence course project. A model classifies a URL as **benign*
 **malicious** (phishing, malware or defacement) **from the URL string alone**. It will be served by a
 FastAPI service and called by a Chrome extension for every page the user opens.
 
-**Status:**
-- Step 1 (data collection, preprocessing, EDA): complete.
-- Step 2 (training, comparison, tuning, evaluation): complete.
-- Still to come: step 3 (FastAPI + Docker + Render), step 4 (Chrome extension) and step 5
-  (final report).
+**Live API:** https://malicious-url-api.onrender.com (interactive docs at `/docs`)
+
+| Step | Deliverable | Status |
+|---|---|---|
+| 1 | Data collection, preprocessing, EDA (`notebooks/01_…`, `docs/01_…`) | done |
+| 2 | Training, comparison, tuning, evaluation (`notebooks/02_…`, `docs/02_…`) | done |
+| 3 | FastAPI service, Docker, Render deployment (`api/`, `docs/03_deployment_guide.md`) | done |
+| 4 | Chrome extension | next |
+| 5 | Final report + presentation | planned |
+
+**Run the API locally (one command, from the project root, venv installed):**
+```powershell
+.\.venv\Scripts\python.exe -m uvicorn api.main:app --port 8000
+```
+Then open http://127.0.0.1:8000/docs. See `docs/03_deployment_guide.md` for Docker, Render and the
+API contract.
 
 ## Folder structure
 
