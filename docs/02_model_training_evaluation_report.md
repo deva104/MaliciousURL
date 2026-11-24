@@ -173,7 +173,8 @@ threshold explicitly.
 
 For each candidate: the threshold with the best validation F1 subject to **FPR ≤ 1%**
 (`reports/metrics/candidates_threshold.csv`, figure 20). F1 at 0.5 is about 0.74, but FPR there is
-7–14%. Keeping FPR ≤ 1% needs thresholds of 0.80–0.88: precision ≈ 0.96, recall ≈ 0.37–0.49.
+7–14%. Keeping FPR ≤ 1% needs thresholds of 0.80–0.86 for the tree ensembles (0.56–0.90 across all
+candidates). Precision is ≈ 0.94–0.97 and recall ≈ 0.25–0.49.
 
 ## 8. Selection decision
 
@@ -280,3 +281,48 @@ high-cardinality features. Figure 24.
 
 See `README.md` → "How to run Step 2". `scripts/step2_benchmark.py` runs first, then the notebook
 (the first run trains about 33 models; later runs use `models/cache/`), then `pytest`.
+
+## 17. Why our scores are lower than published ones: random vs grouped split
+
+*Added in Step 5. Notebook: `notebooks/03_split_comparison.ipynb`; table:
+`reports/metrics/split_comparison.csv`; figure `25_random_vs_grouped_split.png`.*
+
+Many papers on these datasets report F1 or accuracy around 0.97 using a **random** train/test
+split. We repeated the Step 2 recipes on a random split with everything else held constant:
+* the same cleaned data and the same 43 features;
+* `tld_malicious_rate` refitted on random-train only, out-of-fold for the train rows;
+* noisy rows removed, as in Step 2;
+* a random stratified split, 70/15/15, `random_state=42`.
+
+**Leakage.** In the random split, **66.0% of test URLs come from a registered domain that also
+appears in train**. In our grouped split, 0% do.
+
+| recipe (evaluated on) | threshold | F1 random | F1 grouped | inflation | ROC-AUC random | ROC-AUC grouped |
+|---|---|---:|---:|---:|---:|---:|
+| Soft Voting, deployed (test) | 0.5 | 0.8006 | 0.7303 | +7.0 pts | 0.9318 | 0.8883 |
+| Soft Voting, deployed (test) | FPR ≤ 1% (val) | 0.7172 | 0.6246 | +9.3 pts | 0.9318 | 0.8883 |
+| XGBoost tuned (val) | 0.5 | 0.8002 | 0.7437 | +5.6 pts | 0.9357 | 0.8930 |
+| XGBoost tuned (val) | FPR ≤ 1% (val) | 0.7348 | 0.6542 | +8.1 pts | 0.9357 | 0.8930 |
+| RF small_6 (val) | 0.5 | 0.7882 | 0.7374 | +5.1 pts | 0.9190 | 0.8741 |
+| RF small_6 (val) | FPR ≤ 1% (val) | 0.6779 | 0.5502 | +12.8 pts | 0.9190 | 0.8741 |
+
+Notes on the table:
+* The grouped **test** set was used only once in Step 2, for the deployed model. So XGBoost and
+  RF are compared validation-to-validation.
+* The grouped Soft Voting F1 at 0.5 (0.7303) was computed from the cached Step 2 test
+  predictions. Only the cut-off differs; no model was re-scored.
+
+**Where the inflation comes from.** Inside the random test set, the deployed recipe (threshold
+0.76, chosen on random-val) scores:
+* **F1 0.805** (ROC-AUC 0.969) on the 84,846 URLs whose domain was seen in training;
+* only **F1 0.414** (ROC-AUC 0.792, recall 0.270) on the 43,644 URLs from unseen domains.
+
+So a random split mainly measures how well the model *recognises websites it has already seen*.
+
+**Why we are below published numbers:**
+1. **Evaluation on unseen websites.** This costs 5–13 F1 points here.
+2. **The shortcuts removed in Step 1.** The scheme alone had ROC-AUC 0.788 on the raw Kaggle data.
+3. **Label noise kept, not hand-cleaned.**
+
+Even the random split stays well below ~0.97, which is consistent with point 2. That attribution is
+an interpretation; it was not measured separately.

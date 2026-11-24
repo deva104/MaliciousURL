@@ -259,7 +259,7 @@ was let through by the list.**
 | invalid input (`justtext`) | **422** |
 | CORS preflight from `chrome-extension://abc` | `access-control-allow-origin: *` |
 | warm latency | `/health` round trip median **89 ms**; `/predict` round trip median **103 ms**, of which **14.2 ms** is the server-side prediction (same as locally); the rest is network |
-| cold start | **not observed in this run**: the instance had just been deployed and was awake (uptime ~150 s; first `/health` 198 ms). Render's free instances sleep after ~15 min idle, and the first request after sleep takes noticeably longer. **Open `/health` ~2 min before the demo** |
+| cold start | **34.1 s** until the first `/health` answered 200, measured on 2026-11-25 at 01:08 IST after **19.0 min with zero requests** (`scripts/cold_start.py` → `reports/metrics/cold_start.json`; the response showed `uptime_s` 2.5, so the container had really been asleep). The next 3 warm `/health` requests took 98, 124 and 144 ms. During this live-test run the instance was awake (first `/health` 198 ms). **Open `/health` ~2 min before the demo** |
 | load test (200 requests, concurrency 5) | **0 errors**, 8.1 requests/s, p50 610 ms, p95 907 ms, p99 1,221 ms |
 
   The live throughput (8 requests/s) is far below the laptop's (101 requests/s). The free instance

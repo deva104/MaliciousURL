@@ -189,7 +189,8 @@ without one" (section 2.2) show that this bias even reaches the labels.
   run the same per-URL function. The notebook asserts identical output on 5,000 random URLs.
 * **Speed.** 856,600 URLs × 48 features take **36.6 s** in a single process (~23,400 URLs/s) in
   the final run. Across our three runs the time was 36–44 s.
-* **Unit tests.** `tests/test_features.py` passes **53 tests**.
+* **Unit tests.** `tests/test_features.py` passed **53 tests** at the end of Step 1. Step 2 added a
+  54th (fast single-URL path == batch); the whole suite (features + prediction + API) now has 93.
 
 All 49 candidate features (48 lexical + 1 encoded). 6 are later removed as redundant (section 7), so the model uses **43**.
 

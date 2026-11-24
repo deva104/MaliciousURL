@@ -4,7 +4,21 @@ Computational Intelligence course project. A model classifies a URL as **benign*
 **malicious** (phishing, malware or defacement) **from the URL string alone**. It is served by a
 FastAPI service on Render and called by the **URL Guard** Chrome extension for every page the user opens.
 
-**Live API:** https://malicious-url-api.onrender.com (interactive docs at `/docs`)
+**Quick links**
+- **Live API:** https://malicious-url-api.onrender.com
+  - Swagger UI: https://malicious-url-api.onrender.com/docs
+  - health: `/health`
+- **Final report:** [docs/05_final_report.md](docs/05_final_report.md). All documents:
+  [docs/README.md](docs/README.md).
+- **Step reports:**
+  - [01 data](docs/01_data_preprocessing_report.md)
+  - [02 models (+ random vs grouped split, §17)](docs/02_model_training_evaluation_report.md)
+  - [03 deployment](docs/03_deployment_guide.md)
+  - [04 extension](docs/04_extension_user_guide.md)
+- **Demo script for presentation day:** [docs/06_demo_script.md](docs/06_demo_script.md)
+- **Executed notebooks:** `notebooks/01_…`, `02_…`, `03_split_comparison.ipynb` (HTML copies in
+  `reports/`)
+- **Load the extension:** see [below](#load-the-chrome-extension-url-guard).
 
 | Step | Deliverable | Status |
 |---|---|---|
@@ -12,7 +26,7 @@ FastAPI service on Render and called by the **URL Guard** Chrome extension for e
 | 2 | Training, comparison, tuning, evaluation (`notebooks/02_…`, `docs/02_…`) | done |
 | 3 | FastAPI service, Docker, Render deployment (`api/`, `docs/03_deployment_guide.md`) | done |
 | 4 | Chrome extension "URL Guard" (`extension/`, `docs/04_extension_user_guide.md`) | done |
-| 5 | Final report + presentation | next |
+| 5 | Split comparison, demo kit, final report (`notebooks/03_…`, `docs/05_…`, `docs/06_…`) | done |
 
 **Run the API locally (one command, from the project root, venv installed):**
 ```powershell
@@ -21,7 +35,7 @@ FastAPI service on Render and called by the **URL Guard** Chrome extension for e
 Then open http://127.0.0.1:8000/docs. See `docs/03_deployment_guide.md` for Docker, Render and the
 API contract.
 
-**Load the Chrome extension (URL Guard):**
+### Load the Chrome extension (URL Guard)
 1. Open Chrome and go to `chrome://extensions`.
 2. Switch on **Developer mode** (top right).
 3. Click **Load unpacked** and choose the `extension/` folder (the one that contains `manifest.json`).

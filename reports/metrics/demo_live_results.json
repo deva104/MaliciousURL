@@ -1,0 +1,599 @@
+{
+  "base_url": "https://malicious-url-api.onrender.com",
+  "requests_sent": 45,
+  "first_health": {
+    "status": 200,
+    "ms": 275.7,
+    "body": {
+      "status": "ok",
+      "model_loaded": true,
+      "model": "Soft Voting (tuned members) [noise removed]",
+      "model_version": "voting_tuned_noiseclean@2026-11-24",
+      "uptime_s": 1984.0
+    }
+  },
+  "last_request_utc": "2026-11-24T19:19:06+00:00",
+  "last_request_local": "2026-11-25 00:49:06 India Standard Time",
+  "results": [
+    {
+      "group": "safe",
+      "open": "SAFE TO OPEN IN A TAB",
+      "url": "https://www.google.com/search?q=random+forest+phishing+detection",
+      "normal": {
+        "status": 200,
+        "verdict": "safe",
+        "probability": 0.073333,
+        "decided_by": "trusted_list",
+        "reasons": [],
+        "error": null,
+        "detail": null
+      },
+      "model_only": {
+        "status": 200,
+        "verdict": "safe",
+        "probability": 0.073333,
+        "decided_by": "model",
+        "reasons": [],
+        "error": null,
+        "detail": null
+      }
+    },
+    {
+      "group": "safe",
+      "open": "SAFE TO OPEN IN A TAB",
+      "url": "https://www.youtube.com/watch?v=aircAruvnKk",
+      "normal": {
+        "status": 200,
+        "verdict": "safe",
+        "probability": 0.018373,
+        "decided_by": "trusted_list",
+        "reasons": [],
+        "error": null,
+        "detail": null
+      },
+      "model_only": {
+        "status": 200,
+        "verdict": "safe",
+        "probability": 0.018373,
+        "decided_by": "model",
+        "reasons": [],
+        "error": null,
+        "detail": null
+      }
+    },
+    {
+      "group": "safe",
+      "open": "SAFE TO OPEN IN A TAB",
+      "url": "https://www.mitaoe.ac.in",
+      "normal": {
+        "status": 200,
+        "verdict": "safe",
+        "probability": 0.10697,
+        "decided_by": "trusted_list",
+        "reasons": [],
+        "error": null,
+        "detail": null
+      },
+      "model_only": {
+        "status": 200,
+        "verdict": "safe",
+        "probability": 0.10697,
+        "decided_by": "model",
+        "reasons": [],
+        "error": null,
+        "detail": null
+      }
+    },
+    {
+      "group": "safe",
+      "open": "SAFE TO OPEN IN A TAB",
+      "url": "https://www.onlinesbi.sbi/",
+      "normal": {
+        "status": 200,
+        "verdict": "safe",
+        "probability": 0.30575,
+        "decided_by": "trusted_list",
+        "reasons": [],
+        "error": null,
+        "detail": null
+      },
+      "model_only": {
+        "status": 200,
+        "verdict": "safe",
+        "probability": 0.30575,
+        "decided_by": "model",
+        "reasons": [],
+        "error": null,
+        "detail": null
+      }
+    },
+    {
+      "group": "safe",
+      "open": "SAFE TO OPEN IN A TAB",
+      "url": "https://en.wikipedia.org/wiki/Random_forest",
+      "normal": {
+        "status": 200,
+        "verdict": "safe",
+        "probability": 0.051173,
+        "decided_by": "trusted_list",
+        "reasons": [],
+        "error": null,
+        "detail": null
+      },
+      "model_only": {
+        "status": 200,
+        "verdict": "safe",
+        "probability": 0.051173,
+        "decided_by": "model",
+        "reasons": [],
+        "error": null,
+        "detail": null
+      }
+    },
+    {
+      "group": "safe",
+      "open": "SAFE TO OPEN IN A TAB",
+      "url": "https://github.com/deva104/MaliciousURL",
+      "normal": {
+        "status": 200,
+        "verdict": "safe",
+        "probability": 0.130047,
+        "decided_by": "trusted_list",
+        "reasons": [],
+        "error": null,
+        "detail": null
+      },
+      "model_only": {
+        "status": 200,
+        "verdict": "safe",
+        "probability": 0.130047,
+        "decided_by": "model",
+        "reasons": [],
+        "error": null,
+        "detail": null
+      }
+    },
+    {
+      "group": "safe",
+      "open": "SAFE TO OPEN IN A TAB",
+      "url": "https://www.amazon.in/Apple-MacBook-Chip-13-inch-256GB/dp/B08N5W4NNB",
+      "normal": {
+        "status": 200,
+        "verdict": "safe",
+        "probability": 0.289484,
+        "decided_by": "trusted_list",
+        "reasons": [],
+        "error": null,
+        "detail": null
+      },
+      "model_only": {
+        "status": 200,
+        "verdict": "safe",
+        "probability": 0.289484,
+        "decided_by": "model",
+        "reasons": [],
+        "error": null,
+        "detail": null
+      }
+    },
+    {
+      "group": "safe",
+      "open": "SAFE TO OPEN IN A TAB",
+      "url": "https://www.irctc.co.in",
+      "normal": {
+        "status": 200,
+        "verdict": "safe",
+        "probability": 0.194382,
+        "decided_by": "trusted_list",
+        "reasons": [],
+        "error": null,
+        "detail": null
+      },
+      "model_only": {
+        "status": 200,
+        "verdict": "safe",
+        "probability": 0.194382,
+        "decided_by": "model",
+        "reasons": [],
+        "error": null,
+        "detail": null
+      }
+    },
+    {
+      "group": "harmless-but-suspicious (documentation IP)",
+      "open": "SAFE TO OPEN IN A TAB",
+      "url": "http://203.0.113.45/secure/login/verify-account.php",
+      "normal": {
+        "status": 200,
+        "verdict": "malicious",
+        "probability": 0.99017,
+        "decided_by": "model",
+        "reasons": [
+          "Several login / verification words",
+          "Host is an IP address, not a domain name"
+        ],
+        "error": null,
+        "detail": null
+      },
+      "model_only": {
+        "status": 200,
+        "verdict": "malicious",
+        "probability": 0.99017,
+        "decided_by": "model",
+        "reasons": [
+          "Several login / verification words",
+          "Host is an IP address, not a domain name"
+        ],
+        "error": null,
+        "detail": null
+      }
+    },
+    {
+      "group": "harmless-but-suspicious (documentation IP)",
+      "open": "SAFE TO OPEN IN A TAB",
+      "url": "http://198.51.100.7/paypal/login/verify",
+      "normal": {
+        "status": 200,
+        "verdict": "malicious",
+        "probability": 0.994238,
+        "decided_by": "model",
+        "reasons": [
+          "Several login / verification words",
+          "Brand name appears outside the real domain",
+          "Host is an IP address, not a domain name"
+        ],
+        "error": null,
+        "detail": null
+      },
+      "model_only": {
+        "status": 200,
+        "verdict": "malicious",
+        "probability": 0.994238,
+        "decided_by": "model",
+        "reasons": [
+          "Several login / verification words",
+          "Brand name appears outside the real domain",
+          "Host is an IP address, not a domain name"
+        ],
+        "error": null,
+        "detail": null
+      }
+    },
+    {
+      "group": "harmless-but-suspicious (documentation IP)",
+      "open": "SAFE TO OPEN IN A TAB",
+      "url": "http://192.0.2.10/paypal.com/webscr/cmd=login",
+      "normal": {
+        "status": 200,
+        "verdict": "malicious",
+        "probability": 0.978699,
+        "decided_by": "model",
+        "reasons": [
+          "Several login / verification words",
+          "Brand name appears outside the real domain",
+          "Host is an IP address, not a domain name"
+        ],
+        "error": null,
+        "detail": null
+      },
+      "model_only": {
+        "status": 200,
+        "verdict": "malicious",
+        "probability": 0.978699,
+        "decided_by": "model",
+        "reasons": [
+          "Several login / verification words",
+          "Brand name appears outside the real domain",
+          "Host is an IP address, not a domain name"
+        ],
+        "error": null,
+        "detail": null
+      }
+    },
+    {
+      "group": "look-alike",
+      "open": "POPUP ONLY",
+      "url": "paypal.com.secure-account-verify.xyz/signin",
+      "normal": {
+        "status": 200,
+        "verdict": "malicious",
+        "probability": 0.988716,
+        "decided_by": "model",
+        "reasons": [
+          "Top-level domain .xyz is frequently used for malicious sites",
+          "Several login / verification words",
+          "Random-looking host name"
+        ],
+        "error": null,
+        "detail": null
+      },
+      "model_only": {
+        "status": 200,
+        "verdict": "malicious",
+        "probability": 0.988716,
+        "decided_by": "model",
+        "reasons": [
+          "Top-level domain .xyz is frequently used for malicious sites",
+          "Several login / verification words",
+          "Random-looking host name"
+        ],
+        "error": null,
+        "detail": null
+      }
+    },
+    {
+      "group": "look-alike",
+      "open": "POPUP ONLY",
+      "url": "http://xn--pypal-4ve.com/login",
+      "normal": {
+        "status": 200,
+        "verdict": "malicious",
+        "probability": 0.855798,
+        "decided_by": "model",
+        "reasons": [
+          "Internationalised (punycode) domain, possible look-alike"
+        ],
+        "error": null,
+        "detail": null
+      },
+      "model_only": {
+        "status": 200,
+        "verdict": "malicious",
+        "probability": 0.855798,
+        "decided_by": "model",
+        "reasons": [
+          "Internationalised (punycode) domain, possible look-alike"
+        ],
+        "error": null,
+        "detail": null
+      }
+    },
+    {
+      "group": "look-alike",
+      "open": "POPUP ONLY",
+      "url": "bit.ly/3abcXYZ",
+      "normal": {
+        "status": 200,
+        "verdict": "malicious",
+        "probability": 0.863922,
+        "decided_by": "model",
+        "reasons": [
+          "URL shortener hides the real destination"
+        ],
+        "error": null,
+        "detail": null
+      },
+      "model_only": {
+        "status": 200,
+        "verdict": "malicious",
+        "probability": 0.863922,
+        "decided_by": "model",
+        "reasons": [
+          "URL shortener hides the real destination"
+        ],
+        "error": null,
+        "detail": null
+      }
+    },
+    {
+      "group": "OpenPhish (live phishing)",
+      "open": "POPUP ONLY",
+      "url": "http://ptvd9-f5v-857a-15vyc-29-09-2026-aa-4t1.pages.dev/",
+      "normal": {
+        "status": 200,
+        "verdict": "malicious",
+        "probability": 0.989141,
+        "decided_by": "model",
+        "reasons": [
+          "Top-level domain .dev is frequently used for malicious sites",
+          "Random-looking host name"
+        ],
+        "error": null,
+        "detail": null
+      },
+      "model_only": {
+        "status": 200,
+        "verdict": "malicious",
+        "probability": 0.989141,
+        "decided_by": "model",
+        "reasons": [
+          "Top-level domain .dev is frequently used for malicious sites",
+          "Random-looking host name"
+        ],
+        "error": null,
+        "detail": null
+      }
+    },
+    {
+      "group": "OpenPhish (live phishing)",
+      "open": "POPUP ONLY",
+      "url": "http://c1t77f-kehr8a7q8-arcadawebapps2.vercel.app/",
+      "normal": {
+        "status": 200,
+        "verdict": "malicious",
+        "probability": 0.998414,
+        "decided_by": "model",
+        "reasons": [
+          "Top-level domain .app is frequently used for malicious sites",
+          "Random-looking host name"
+        ],
+        "error": null,
+        "detail": null
+      },
+      "model_only": {
+        "status": 200,
+        "verdict": "malicious",
+        "probability": 0.998414,
+        "decided_by": "model",
+        "reasons": [
+          "Top-level domain .app is frequently used for malicious sites",
+          "Random-looking host name"
+        ],
+        "error": null,
+        "detail": null
+      }
+    },
+    {
+      "group": "OpenPhish (live phishing)",
+      "open": "POPUP ONLY",
+      "url": "https://vup4t-kca-8435-a67de-17-10-2026-aa.pages.dev/",
+      "normal": {
+        "status": 200,
+        "verdict": "malicious",
+        "probability": 0.992475,
+        "decided_by": "model",
+        "reasons": [
+          "Top-level domain .dev is frequently used for malicious sites",
+          "Random-looking host name"
+        ],
+        "error": null,
+        "detail": null
+      },
+      "model_only": {
+        "status": 200,
+        "verdict": "malicious",
+        "probability": 0.992475,
+        "decided_by": "model",
+        "reasons": [
+          "Top-level domain .dev is frequently used for malicious sites",
+          "Random-looking host name"
+        ],
+        "error": null,
+        "detail": null
+      }
+    },
+    {
+      "group": "OpenPhish (live phishing)",
+      "open": "POPUP ONLY",
+      "url": "https://sp28ct11-mavkaro-biz-velzuni.pages.dev/",
+      "normal": {
+        "status": 200,
+        "verdict": "malicious",
+        "probability": 0.996703,
+        "decided_by": "model",
+        "reasons": [
+          "Top-level domain .dev is frequently used for malicious sites",
+          "Random-looking host name"
+        ],
+        "error": null,
+        "detail": null
+      },
+      "model_only": {
+        "status": 200,
+        "verdict": "malicious",
+        "probability": 0.996703,
+        "decided_by": "model",
+        "reasons": [
+          "Top-level domain .dev is frequently used for malicious sites",
+          "Random-looking host name"
+        ],
+        "error": null,
+        "detail": null
+      }
+    },
+    {
+      "group": "OpenPhish (live phishing)",
+      "open": "POPUP ONLY",
+      "url": "http://www.ieiekkkk.weebly.com/",
+      "normal": {
+        "status": 200,
+        "verdict": "safe",
+        "probability": 0.535858,
+        "decided_by": "model",
+        "reasons": [],
+        "error": null,
+        "detail": null
+      },
+      "model_only": {
+        "status": 200,
+        "verdict": "safe",
+        "probability": 0.535858,
+        "decided_by": "model",
+        "reasons": [],
+        "error": null,
+        "detail": null
+      }
+    },
+    {
+      "group": "OpenPhish (live phishing)",
+      "open": "POPUP ONLY",
+      "url": "https://www.roblox.com.pt/users/898385753150/profile",
+      "normal": {
+        "status": 200,
+        "verdict": "safe",
+        "probability": 0.297341,
+        "decided_by": "model",
+        "reasons": [],
+        "error": null,
+        "detail": null
+      },
+      "model_only": {
+        "status": 200,
+        "verdict": "safe",
+        "probability": 0.297341,
+        "decided_by": "model",
+        "reasons": [],
+        "error": null,
+        "detail": null
+      }
+    },
+    {
+      "group": "OpenPhish (live phishing)",
+      "open": "POPUP ONLY",
+      "url": "http://lx016-yny-g2u5-qkkzc-24-09-2026-hh.pages.dev/",
+      "normal": {
+        "status": 200,
+        "verdict": "malicious",
+        "probability": 0.993944,
+        "decided_by": "model",
+        "reasons": [
+          "Top-level domain .dev is frequently used for malicious sites",
+          "Random-looking host name"
+        ],
+        "error": null,
+        "detail": null
+      },
+      "model_only": {
+        "status": 200,
+        "verdict": "malicious",
+        "probability": 0.993944,
+        "decided_by": "model",
+        "reasons": [
+          "Top-level domain .dev is frequently used for malicious sites",
+          "Random-looking host name"
+        ],
+        "error": null,
+        "detail": null
+      }
+    },
+    {
+      "group": "OpenPhish (live phishing)",
+      "open": "POPUP ONLY",
+      "url": "http://xenqaro-mpt-vulzemi-p9x4me61.pages.dev/",
+      "normal": {
+        "status": 200,
+        "verdict": "malicious",
+        "probability": 0.993561,
+        "decided_by": "model",
+        "reasons": [
+          "Top-level domain .dev is frequently used for malicious sites",
+          "Random-looking host name"
+        ],
+        "error": null,
+        "detail": null
+      },
+      "model_only": {
+        "status": 200,
+        "verdict": "malicious",
+        "probability": 0.993561,
+        "decided_by": "model",
+        "reasons": [
+          "Top-level domain .dev is frequently used for malicious sites",
+          "Random-looking host name"
+        ],
+        "error": null,
+        "detail": null
+      }
+    }
+  ]
+}

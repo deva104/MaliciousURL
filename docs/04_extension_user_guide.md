@@ -176,7 +176,8 @@ retrying for up to 60 s (one try every few seconds). While Render boots it may a
    `probability`), the page is allowed and the badge shows "?". Blocking every page when our server is
    down would make the browser unusable. The downside: during an outage nothing is protected.
 3. **Free-server cold start.** The free Render server sleeps after ~15 min idle; the first request can
-   take ~60 s. The automatic check gives up after 5 s (fail-open, "?"), but that request still wakes the
+   take ~60 s (measured: 34.1 s after 19 min idle on 2026-11-25, see `reports/metrics/cold_start.json`).
+   The automatic check gives up after 5 s (fail-open, "?"), but that request still wakes the
    server, so the following pages are checked normally. The popup waits up to 60 s.
 4. **URL shorteners.** The short URL is checked first (`onBeforeNavigate`); after the server redirect,
    the final URL is checked again (`onCommitted`). The final page may therefore load a moment before
