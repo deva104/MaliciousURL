@@ -1,8 +1,8 @@
 # Malicious URL Detection using Machine Learning (Random Forest + Ensemble Learning)
 
 Computational Intelligence course project. A model classifies a URL as **benign** or
-**malicious** (phishing, malware or defacement) **from the URL string alone**. It will be served by a
-FastAPI service and called by a Chrome extension for every page the user opens.
+**malicious** (phishing, malware or defacement) **from the URL string alone**. It is served by a
+FastAPI service on Render and called by the **URL Guard** Chrome extension for every page the user opens.
 
 **Live API:** https://malicious-url-api.onrender.com (interactive docs at `/docs`)
 
@@ -11,8 +11,8 @@ FastAPI service and called by a Chrome extension for every page the user opens.
 | 1 | Data collection, preprocessing, EDA (`notebooks/01_…`, `docs/01_…`) | done |
 | 2 | Training, comparison, tuning, evaluation (`notebooks/02_…`, `docs/02_…`) | done |
 | 3 | FastAPI service, Docker, Render deployment (`api/`, `docs/03_deployment_guide.md`) | done |
-| 4 | Chrome extension | next |
-| 5 | Final report + presentation | planned |
+| 4 | Chrome extension "URL Guard" (`extension/`, `docs/04_extension_user_guide.md`) | done |
+| 5 | Final report + presentation | next |
 
 **Run the API locally (one command, from the project root, venv installed):**
 ```powershell
@@ -20,6 +20,24 @@ FastAPI service and called by a Chrome extension for every page the user opens.
 ```
 Then open http://127.0.0.1:8000/docs. See `docs/03_deployment_guide.md` for Docker, Render and the
 API contract.
+
+**Load the Chrome extension (URL Guard):**
+1. Open Chrome and go to `chrome://extensions`.
+2. Switch on **Developer mode** (top right).
+3. Click **Load unpacked** and choose the `extension/` folder (the one that contains `manifest.json`).
+4. Pin it: puzzle icon in the toolbar → pin next to **URL Guard**.
+
+It uses the live API by default. Before a demo, open **Options → Test connection** (a sleeping free
+Render server can take up to a minute to wake). After editing files in `extension/`, press the reload
+arrow on its card in `chrome://extensions`. Extension tests (Node only, no `npm install`):
+```powershell
+node --test "extension/tests/*.test.mjs"
+```
+```powershell
+node extension/dev/check_extension.mjs
+```
+Full guide, including permissions, privacy, limitations and a demo script:
+`docs/04_extension_user_guide.md`.
 
 ## Folder structure
 
@@ -29,13 +47,18 @@ data/
   external/       OpenPhish snapshot = unseen fresh test set (never used for training)
   processed/      urls_clean.csv(.zip), train/val/test.parquet (not in git; recreate with the notebook)
                   feature_list.json (in git: the ordered feature names the API must use)
-docs/             00_project_proposal.md, 01_data_preprocessing_report.md
-models/           feature_extractor.joblib, scaler.joblib, type_label_encoder.joblib
-notebooks/        01_data_preprocessing_eda.ipynb (executed, with all outputs)
-reports/          01_data_preprocessing_eda.html + figures/ (PNG, dpi 150)
-scripts/          download_data.py (download + SHA-256 verification)
-src/              shared code: config.py, data.py (load/clean/split), features.py (normalise + features), viz.py
-tests/            test_features.py (pytest)
+api/              main.py: FastAPI service (Step 3)
+docs/             00_project_proposal.md, 01_data_preprocessing_report.md, 02_model_training_evaluation_report.md,
+                  03_deployment_guide.md, 04_extension_user_guide.md
+extension/        URL Guard Chrome extension (Manifest V3, plain JavaScript) + tests/ and dev/ tools
+models/           best_model.joblib + model_metadata.json (deployed model), feature_extractor.joblib,
+                  scaler.joblib, type_label_encoder.joblib; cache/ (training cache, not in git)
+notebooks/        01_data_preprocessing_eda.ipynb, 02_model_training_evaluation.ipynb (executed)
+reports/          HTML copies of the notebooks, figures/ (PNG, dpi 150), metrics/ (CSV/JSON results)
+scripts/          download_data.py, step2_benchmark.py, measure_memory.py, load_test.py, live_test.py, ...
+src/              shared code: config.py, data.py, features.py, modeling.py, predict.py, trusted_domains.py, viz.py
+tests/            test_features.py, test_predict.py, test_api.py (pytest)
+Dockerfile, render.yaml, requirements-api.txt   deployment (Step 3)
 ```
 
 `src/features.py` holds the feature code for **both** training and the API, so the two can never
