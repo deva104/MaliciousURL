@@ -1,0 +1,41 @@
+body {
+  width: 340px;
+  padding: 10px 12px;
+}
+
+section {
+  border-top: 1px solid var(--border);
+  margin-top: 8px;
+}
+
+.row {
+  display: flex;
+  gap: 6px;
+}
+
+.row input {
+  flex: 1;
+  min-width: 0;
+}
+
+label.check {
+  display: block;
+  margin: 6px 0;
+}
+
+.result {
+  margin: 6px 0;
+  padding: 6px 8px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+}
+
+.result .verdict {
+  font-weight: bold;
+  font-size: 14px;
+  margin: 0 0 4px;
+}
+
+.footer {
+  padding-top: 4px;
+}

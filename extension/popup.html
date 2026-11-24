@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>URL Guard</title>
+    <link rel="stylesheet" href="common.css" />
+    <link rel="stylesheet" href="popup.css" />
+    <script type="module" src="popup.js"></script>
+  </head>
+  <body>
+    <h1>URL Guard</h1>
+    <p id="api-status" class="small">API: checking...</p>
+    <p id="api-last" class="small muted" hidden></p>
+
+    <section>
+      <h2>This tab</h2>
+      <p id="tab-url" class="url muted"></p>
+      <div id="tab-result"></div>
+      <button id="tab-check" type="button" hidden>Check now</button>
+      <p id="tab-msg" class="msg small" hidden></p>
+    </section>
+
+    <section>
+      <h2>Check a URL</h2>
+      <form id="check-form" novalidate>
+        <div class="row">
+          <input id="url-input" type="text" placeholder="paste a URL, e.g. example.com" autocomplete="off" spellcheck="false" />
+          <button id="check-btn" type="submit">Check</button>
+        </div>
+        <label class="small check">
+          <input id="model-only" type="checkbox" />
+          Model only (ignore the trusted list)
+        </label>
+      </form>
+      <p id="check-msg" class="msg small" hidden></p>
+      <div id="check-result"></div>
+    </section>
+
+    <section class="footer">
+      <label class="check">
+        <input id="protection" type="checkbox" />
+        Automatic protection: <strong id="protection-label">...</strong>
+      </label>
+      <p class="small">
+        <button id="open-settings" class="link" type="button">Settings</button>
+        &middot;
+        <button id="open-history" class="link" type="button">Blocked history</button>
+      </p>
+    </section>
+  </body>
+</html>

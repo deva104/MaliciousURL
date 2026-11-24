@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dangerous site blocked - URL Guard</title>
+    <link rel="stylesheet" href="common.css" />
+    <link rel="stylesheet" href="warning.css" />
+    <script type="module" src="warning.js"></script>
+  </head>
+  <body>
+    <main class="box">
+      <p class="brand muted">URL Guard</p>
+      <h1 class="danger">Dangerous site blocked</h1>
+      <p>
+        URL Guard stopped this page because our machine learning model thinks it is likely malicious
+        (phishing, malware or defacement). Nothing from the page was shown.
+      </p>
+
+      <table class="kv facts">
+        <tr>
+          <th>Site</th>
+          <td id="host" class="url"></td>
+        </tr>
+        <tr>
+          <th>Address</th>
+          <td>
+            <span id="url" class="url"></span>
+            <button id="toggle-url" class="link small" type="button" hidden>Show full address</button>
+          </td>
+        </tr>
+        <tr>
+          <th>Risk</th>
+          <td id="risk" class="danger"></td>
+        </tr>
+        <tr>
+          <th>Decided by</th>
+          <td id="decided"></td>
+        </tr>
+      </table>
+
+      <h2>Why it was blocked</h2>
+      <ul id="reasons" class="reasons"></ul>
+
+      <p id="note" class="muted small" hidden></p>
+
+      <p class="actions">
+        <button id="back" class="primary" type="button" autofocus>Go back to safety</button>
+      </p>
+      <p>
+        <button id="proceed" class="link small" type="button">Proceed anyway (not recommended)</button>
+      </p>
+
+      <div id="confirm" class="confirm" hidden>
+        <p>
+          <strong>Are you sure?</strong> This site may try to steal your passwords or bank details, or install
+          malware. Only continue if you trust it completely. URL Guard will not block it again until you close
+          the browser.
+        </p>
+        <p>
+          <button id="confirm-yes" class="danger-button" type="button">Yes, I understand the risk, open the site</button>
+          <button id="confirm-no" type="button">Cancel</button>
+        </p>
+      </div>
+
+      <p id="error" class="msg error" hidden></p>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>URL Guard - Settings</title>
+    <link rel="stylesheet" href="common.css" />
+    <link rel="stylesheet" href="options.css" />
+    <script type="module" src="options.js"></script>
+  </head>
+  <body>
+    <main>
+      <h1>URL Guard settings</h1>
+
+      <section>
+        <h2>API server</h2>
+        <p>
+          <label for="api-base">API base URL</label><br />
+          <input id="api-base" type="text" spellcheck="false" autocomplete="off" placeholder="https://your-app.onrender.com" />
+        </p>
+        <p class="small">Presets: <span id="presets"></span></p>
+        <p>
+          <button id="save" class="primary" type="button">Save</button>
+          <button id="test" type="button">Test connection</button>
+          <button id="use-default" type="button">Use default</button>
+        </p>
+        <p id="api-msg" class="msg"></p>
+        <p class="small muted">
+          Currently used: <code id="current-base"></code><br />
+          Default from config.js: <code id="default-base"></code>
+        </p>
+      </section>
+
+      <section>
+        <h2>Stored data</h2>
+        <p>
+          <button id="clear-cache" type="button">Clear cache</button>
+          <span class="small muted">Forgets all verdicts from the last 30 minutes and the instant-block rules.</span>
+        </p>
+        <p>
+          <button id="clear-history" type="button">Clear history</button>
+          <span class="small muted">Deletes the blocked-sites list below.</span>
+        </p>
+        <p id="data-msg" class="msg"></p>
+        <p id="stats" class="small muted"></p>
+      </section>
+
+      <section id="history">
+        <h2>Blocked history</h2>
+        <p class="small muted">The last 50 blocked sites. Stored only on this computer, never sent anywhere.</p>
+        <table id="history-table" class="grid small">
+          <thead>
+            <tr>
+              <th>Time</th>
+              <th>Address</th>
+              <th>Risk</th>
+              <th>Decided by</th>
+              <th>Reasons</th>
+            </tr>
+          </thead>
+          <tbody id="history-body"></tbody>
+        </table>
+        <p id="history-empty" class="muted">No sites blocked yet.</p>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+body {
+  background: #fafafa;
+  font-size: 14px;
+}
+
+.box {
+  max-width: 640px;
+  margin: 48px auto;
+  padding: 24px 28px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--danger);
+}
+
+.brand {
+  margin: 0 0 4px;
+  font-size: 12px;
+}
+
+h1 {
+  font-size: 22px;
+}
+
+.facts {
+  margin: 12px 0;
+}
+
+.facts td {
+  padding-bottom: 4px;
+}
+
+.actions {
+  margin-top: 18px;
+}
+
+.actions button {
+  padding: 6px 16px;
+}
+
+.confirm {
+  margin-top: 8px;
+  padding: 10px 12px;
+  border: 1px solid var(--danger);
+  background: #fff5f5;
+}
+
+.danger-button {
+  border-color: var(--danger);
+  color: var(--danger);
+  background: #fff;
+}
