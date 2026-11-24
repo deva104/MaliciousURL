@@ -1,0 +1,19 @@
+# Render Blueprint: New -> Blueprint -> select this repository -> Apply
+services:
+  - type: web
+    name: malicious-url-api
+    runtime: docker
+    plan: free
+    region: singapore
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: TRUSTED_LIST_ENABLED
+        value: "true"
+      - key: LOG_LEVEL
+        value: INFO
+      - key: MODEL_DIR
+        value: /app/models
+      # PORT is provided by Render (10000); the Dockerfile CMD uses it.

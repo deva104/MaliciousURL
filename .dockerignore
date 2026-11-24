@@ -1,0 +1,17 @@
+# Keep the build context small: the image only needs api/, src/, the model files
+# and feature_list.json (see Dockerfile).
+.git
+.venv
+**/__pycache__
+**/*.pyc
+.pytest_cache
+.ipynb_checkpoints
+data/
+!data/processed/feature_list.json
+notebooks/
+reports/
+docs/
+tests/
+extension/
+models/cache/
+*.part

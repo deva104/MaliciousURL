@@ -4,12 +4,14 @@
 
 ## Team
 
-| Name | Role | Contribution |
-|---|---|---|
-| _name_ | _e.g. data & preprocessing lead_ | _e.g. dataset collection, cleaning, EDA_ |
-| _name_ | _e.g. modelling lead_ | _e.g. model comparison, Random Forest tuning_ |
-| _name_ | _e.g. deployment lead_ | _e.g. FastAPI service, Docker, Render_ |
-| _name_ | _e.g. extension & report lead_ | _e.g. Chrome extension, documentation_ |
+<!-- Roles can be swapped: edit the Role and Contribution cells together. -->
+
+| Name | PRN | Role | Contribution |
+|---|---|---|---|
+| Devendra Harale | 202401070086 | Data & EDA lead | Collected and verified the three datasets, built the cleaning and normalisation pipeline, and led the exploratory data analysis and the bias discovery |
+| Shravani Vyaghrambare | 202401070124 | Modelling lead | Trained and compared the 13 models, tuned Random Forest and XGBoost, chose the decision threshold, and ran the final evaluation |
+| Talha Shaikh | 202401070095 | Deployment lead | Built the FastAPI service and its tests, containerised it with Docker, and deployed it on Render |
+| Shrutika Gaikwad | 202401070120 | Extension & documentation lead | Develops the Chrome extension and prepares the reports, documentation and presentation |
 
 ---
 

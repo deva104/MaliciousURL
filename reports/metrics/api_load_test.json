@@ -1,0 +1,30 @@
+{
+  "base_url": "http://127.0.0.1:8000",
+  "requests": 1000,
+  "concurrency": 20,
+  "completed": 1000,
+  "errors": 0,
+  "status_codes": {
+    "200": 1000
+  },
+  "wall_time_s": 9.852,
+  "requests_per_s": 101.5,
+  "latency_ms": {
+    "p50": 199.83,
+    "p95": 273.31,
+    "p99": 326.8,
+    "mean": 196.32,
+    "max": 419.66
+  },
+  "first_health_ms": 51.2,
+  "health": {
+    "status": "ok",
+    "model_loaded": true,
+    "model": "Soft Voting (tuned members) [noise removed]",
+    "model_version": "voting_tuned_noiseclean@2026-11-24",
+    "uptime_s": 10.5
+  },
+  "client": "Windows-11-10.0.26300-SP0",
+  "timestamp_utc": "2026-11-24T18:12:03+00:00",
+  "note": "about 50% real URLs (repeats -> cache hits) and 50% unique URLs (cache misses)"
+}

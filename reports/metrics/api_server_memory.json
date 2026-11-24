@@ -1,0 +1,28 @@
+[
+  {
+    "label": "after_startup_and_warmup",
+    "port": 8000,
+    "timestamp_utc": "2026-11-24T18:11:52+00:00",
+    "processes": [
+      {
+        "pid": 46564,
+        "name": "python.exe",
+        "rss_mb": 281.4
+      }
+    ],
+    "total_rss_mb": 281.4
+  },
+  {
+    "label": "after_1000_request_load_test",
+    "port": 8000,
+    "timestamp_utc": "2026-11-24T18:12:03+00:00",
+    "processes": [
+      {
+        "pid": 46564,
+        "name": "python.exe",
+        "rss_mb": 287.8
+      }
+    ],
+    "total_rss_mb": 287.8
+  }
+]

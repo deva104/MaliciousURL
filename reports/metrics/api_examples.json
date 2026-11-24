@@ -1,0 +1,85 @@
+{
+  "model_info_keys": "api_version,cache,features,feature_list_sha256,label_noise_decision,library_versions,metrics,model_class,model_key,model_name,model_version,n_features,parameters,selection_rule,threshold,training_date,trusted_list",
+  "phish": {
+    "url": "http://185.234.72.19/paypal.com/webscr/login.php?cmd=_login-run",
+    "normalized_url": "185.234.72.19/paypal.com/webscr/login.php?cmd=_login-run",
+    "verdict": "malicious",
+    "is_malicious": true,
+    "probability": 0.952641,
+    "threshold": 0.8,
+    "decided_by": "model",
+    "reasons": [
+      "Several login / verification words",
+      "Brand name appears outside the real domain",
+      "Host is an IP address, not a domain name"
+    ],
+    "latency_ms": 11.19,
+    "model_version": "voting_tuned_noiseclean@2026-11-24"
+  },
+  "root": {
+    "name": "Malicious URL Detection API",
+    "version": "1.0.0",
+    "docs": "/docs",
+    "health": "/health",
+    "model_info": "/model-info"
+  },
+  "model_only": {
+    "url": "https://www.paypal.com/signin",
+    "normalized_url": "paypal.com/signin",
+    "verdict": "malicious",
+    "is_malicious": true,
+    "probability": 0.823354,
+    "threshold": 0.8,
+    "decided_by": "model",
+    "reasons": [],
+    "latency_ms": 0.036,
+    "model_version": "voting_tuned_noiseclean@2026-11-24"
+  },
+  "batch": {
+    "results": [
+      {
+        "url": "https://github.com/login",
+        "normalized_url": "github.com/login",
+        "verdict": "safe",
+        "is_malicious": false,
+        "probability": 0.823869,
+        "threshold": 0.8,
+        "decided_by": "trusted_list",
+        "reasons": [],
+        "latency_ms": 10.268,
+        "model_version": "voting_tuned_noiseclean@2026-11-24"
+      },
+      {
+        "url": "https://secure-paypal-verify.pages.dev/login",
+        "normalized_url": "secure-paypal-verify.pages.dev/login",
+        "verdict": "malicious",
+        "is_malicious": true,
+        "probability": 0.990069,
+        "threshold": 0.8,
+        "decided_by": "model",
+        "reasons": [
+          "Top-level domain .dev is frequently used for malicious sites",
+          "Several login / verification words",
+          "Brand name appears outside the real domain"
+        ],
+        "latency_ms": 10.268,
+        "model_version": "voting_tuned_noiseclean@2026-11-24"
+      }
+    ],
+    "count": 2,
+    "latency_ms": 10.272
+  },
+  "safe": {
+    "url": "https://www.google.com/search?q=python+tutorial",
+    "normalized_url": "google.com/search?q=python+tutorial",
+    "verdict": "safe",
+    "is_malicious": false,
+    "probability": 0.056838,
+    "threshold": 0.8,
+    "decided_by": "trusted_list",
+    "reasons": [],
+    "latency_ms": 12.335,
+    "model_version": "voting_tuned_noiseclean@2026-11-24"
+  },
+  "err422": "\r\n{\r\n  \"error\": \"invalid_request\",\r\n  \"detail\": [\r\n    {\r\n      \"field\": \"url\",\r\n      \"message\": \"url has no parseable host (single-label host)\"\r\n    }\r\n  ]\r\n}"
+}

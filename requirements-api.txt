@@ -1,0 +1,17 @@
+# Runtime dependencies of the API (Docker / Render). Versions = the ones the model was trained
+# and tested with (see models/model_metadata.json -> versions). The deployed Soft Voting model
+# contains RandomForest + XGBoost + LightGBM members, so xgboost and lightgbm are required.
+fastapi==0.165.0
+uvicorn==0.54.0
+pydantic==2.14.4
+scikit-learn==1.9.1
+numpy==2.5.5
+pandas==3.1.1
+scipy==1.18.1
+tldextract==5.4.0
+joblib==1.6.0
+# xgboost-cpu = the official CPU-only build of xgboost 3.4.1 (same `import xgboost`, same model
+# format) without the bundled CUDA libraries, so the image stays small.
+xgboost-cpu==3.4.1
+lightgbm==4.7.0
+threadpoolctl==3.8.0
