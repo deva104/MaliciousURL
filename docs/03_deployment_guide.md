@@ -17,7 +17,7 @@
  Chrome extension (Step 4)             Render free web service (Docker, Singapore)
  ┌──────────────────────┐   HTTPS     ┌──────────────────────────────────────────────────────────┐
  │ every visited URL ───┼──POST──────►│ FastAPI (api/main.py)                                     │
- │ shows verdict/badge ◄┼──JSON───────┤  ├─ validation (Pydantic: empty / >2000 chars / no host)  │
+ │ shows verdict/badge ◄┼──JSON───────┤  ├─ validation (Pydantic: empty / >2048 chars / no host)  │
  └──────────────────────┘             │  ├─ LRU cache (10k normalised URLs)                        │
                                       │  ├─ trusted-domain list (src/trusted_domains.py)           │
                                       │  └─ src/predict.py ─► src/features.py (same code as Step 1)│
@@ -109,8 +109,13 @@ print(r.json()["verdict"], r.json()["probability"], r.json()["decided_by"])
 | status | body | when |
 |---|---|---|
 | 200 | prediction | valid request |
-| 422 | `{"error": "invalid_request", "detail": [{"field": "url", "message": "url is empty"}]}` | empty or whitespace URL, URL > 2000 characters, no parseable host (e.g. `justtext`, `http://`, control characters), missing field, batch of 0 or > 100 URLs |
+| 422 | `{"error": "invalid_request", "detail": [{"field": "url", "message": "url is empty"}]}` | empty or whitespace URL, URL longer than **2,048 characters** (the Chrome extension's limit; counted after stripping surrounding whitespace; message `url is longer than 2048 characters`), no parseable host (e.g. `justtext`, `http://`, control characters), missing field, batch of 0 or > 100 URLs |
 | 500 | `{"error": "internal_error"}` | unexpected server error. The stack trace goes only to the server log, never to the client |
+
+*Length note:* Step 1 dropped URLs longer than 2,000 characters from the *training* data (10 rows).
+Feature extraction works at any length, so URLs of 2,001–2,048 characters are accepted and scored
+normally. They are simply outside the range the model saw during training, which is very rare in
+practice.
 
 ## 3. Configuration (environment variables)
 
@@ -222,8 +227,9 @@ was let through by the list.**
 
 ## 8. Testing results
 
-* **pytest:** 92 passed. That covers 54 feature tests, 16 tests for `src/predict.py`, and 22 API
-  tests:
+* **pytest:** 93 passed. That covers 54 feature tests, 16 tests for `src/predict.py`, and 23 API
+  tests, including the URL-length boundary (2,048 characters → 200, 2,049 → 422, for single and
+  batch requests):
   * `/health`; Google variants;
   * an IP-host phishing URL is malicious;
   * sites.google.com, github.io, Google Forms and google.com/url bypass the list;

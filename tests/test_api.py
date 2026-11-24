@@ -66,11 +66,34 @@ def test_model_only_flag(client):
     assert b["decided_by"] == "model" and b["probability"] == a["probability"]
 
 
-@pytest.mark.parametrize("bad", ["", "   ", "a" * 2001, "\x00\x01\x02", "://", "http://", "justtext"])
+@pytest.mark.parametrize("bad", ["", "   ", "\x00\x01\x02", "://", "http://", "justtext"])
 def test_invalid_input_422(client, bad):
     r = post(client, bad)
     assert r.status_code == 422
     assert r.json()["error"] == "invalid_request" and r.json()["detail"][0]["message"]
+
+
+def url_of_length(n: int) -> str:
+    prefix = "https://www.example.com/path?q="
+    return prefix + "a" * (n - len(prefix))
+
+
+def test_url_length_limit_is_2048(client):
+    from api.main import MAX_URL_LEN
+    assert MAX_URL_LEN == 2048
+    ok, too_long = url_of_length(2048), url_of_length(2049)
+    assert (len(ok), len(too_long)) == (2048, 2049)
+    assert post(client, ok).status_code == 200
+    r = post(client, too_long)
+    assert r.status_code == 422
+    assert r.json()["detail"][0]["message"] == "url is longer than 2048 characters"
+    # surrounding whitespace is stripped before the length check
+    assert post(client, "  " + ok + "  ").status_code == 200
+
+
+def test_batch_url_length_limit(client):
+    assert client.post("/predict/batch", json={"urls": [url_of_length(2048)]}).status_code == 200
+    assert client.post("/predict/batch", json={"urls": [url_of_length(2049)]}).status_code == 422
 
 
 def test_missing_field_422(client):

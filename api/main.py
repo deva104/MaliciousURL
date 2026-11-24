@@ -37,7 +37,7 @@ from src.features import normalize_url, parse_url
 from src.trusted_domains import TRUSTED_DOMAINS, check_trusted
 
 API_VERSION = "1.0.0"
-MAX_URL_LEN = 2000
+MAX_URL_LEN = 2048   # = the Chrome extension's limit (characters, after stripping whitespace)
 MAX_BATCH = 100
 
 
