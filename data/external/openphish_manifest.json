@@ -1,0 +1,10 @@
+{
+  "openphish_feed_2026-11-24.txt": {
+    "source_url": "https://raw.githubusercontent.com/openphish/public_feed/refs/heads/main/feed.txt",
+    "downloaded_at_utc": "2026-11-24T14:23:18+00:00",
+    "sha256": "7685efd1627db4564af5cfd7281dcbf3ad983e85b346dc589839b095da3352c6",
+    "bytes": 16029,
+    "num_urls": 300,
+    "note": "Unseen fresh phishing test set for Step 2. NEVER train on it."
+  }
+}

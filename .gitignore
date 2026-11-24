@@ -1,0 +1,26 @@
+# Python / Jupyter
+.venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+
+# Data is reproducible via scripts/download_data.py and the notebook
+data/raw/
+data/processed/*
+# ...except the ordered feature list, which the API needs at deploy time
+!data/processed/feature_list.json
+*.part
+
+# Model files > 50 MB must not be committed (GitHub's 50 MB warning / 100 MB limit).
+# .gitignore cannot filter by size, so big models get one of these names
+# (e.g. models/random_forest_large.joblib). Small fitted objects
+# (feature_extractor.joblib, scaler.joblib, ~40 KB) ARE committed for the API.
+models/*_large.joblib
+models/*.pkl.gz
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

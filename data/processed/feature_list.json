@@ -1,0 +1,103 @@
+{
+  "features": [
+    "url_len",
+    "host_len",
+    "path_len",
+    "query_len",
+    "registered_domain_len",
+    "tld_len",
+    "num_dots",
+    "num_hyphens",
+    "num_underscores",
+    "num_slashes",
+    "num_question_marks",
+    "num_at",
+    "num_percent",
+    "num_tilde",
+    "num_digits",
+    "num_other_special",
+    "num_query_params",
+    "host_num_dots",
+    "host_num_hyphens",
+    "host_num_digits",
+    "letter_ratio",
+    "special_char_ratio",
+    "url_entropy",
+    "host_entropy",
+    "longest_token_len",
+    "avg_token_len",
+    "max_consecutive_repeated_char",
+    "host_vowel_ratio",
+    "has_ip_host",
+    "has_port",
+    "has_punycode",
+    "has_at_symbol",
+    "tld_in_subdomain",
+    "double_slash_in_path",
+    "embedded_url",
+    "suspicious_keyword_count",
+    "brand_in_non_registered_part",
+    "is_shortener",
+    "suspicious_tld",
+    "risky_file_extension",
+    "has_php",
+    "has_html",
+    "tld_malicious_rate"
+  ],
+  "n_features": 43,
+  "label": "label (0 = benign, 1 = malicious)",
+  "type_classes": [
+    "benign",
+    "defacement",
+    "malware",
+    "phishing"
+  ],
+  "dropped_as_redundant": [
+    {
+      "dropped": "num_equals",
+      "kept": "num_query_params",
+      "r": 0.987,
+      "MI dropped": 0.0346,
+      "MI kept": 0.036
+    },
+    {
+      "dropped": "num_ampersands",
+      "kept": "num_query_params",
+      "r": 0.971,
+      "MI dropped": 0.0353,
+      "MI kept": 0.036
+    },
+    {
+      "dropped": "num_path_segments",
+      "kept": "num_slashes",
+      "r": 0.962,
+      "MI dropped": 0.0191,
+      "MI kept": 0.0216
+    },
+    {
+      "dropped": "num_letters",
+      "kept": "url_len",
+      "r": 0.961,
+      "MI dropped": 0.0167,
+      "MI kept": 0.0206
+    },
+    {
+      "dropped": "digit_ratio",
+      "kept": "letter_ratio",
+      "r": -0.943,
+      "MI dropped": 0.0608,
+      "MI kept": 0.0614
+    },
+    {
+      "dropped": "num_subdomains",
+      "kept": "host_num_dots",
+      "r": 0.924,
+      "MI dropped": 0.0079,
+      "MI kept": 0.0308
+    }
+  ],
+  "tld_smoothing_m": 50.0,
+  "tld_prior": 0.35634098094577915,
+  "random_state": 42,
+  "note": "Order matters: the API must build feature vectors in exactly this order (models/feature_extractor.joblib does this). Parquet values are unscaled."
+}
