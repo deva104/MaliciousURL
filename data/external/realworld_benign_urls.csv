@@ -1,0 +1,87 @@
+url,category,note
+https://www.google.com/search?q=how+to+prepare+for+gate+computer+science+2027+in+6+months&rlz=1C1CHBF_enIN1100IN1100&oq=how+to+prepare+for+gate&gs_lcrp=EgZjaHJvbWUqBwgBEAAYgAQyBggAEEUYOTIHCAEQABiABNIBCDc2NTFqMGo3qAIIsAIB&sourceid=chrome&ie=UTF-8,google_search,long query with Chrome tracking parameters
+https://www.google.com/search?q=random+forest+vs+gradient+boosting+for+tabular+data&sca_esv=6a1f2b3c4d5e6f70&source=hp&ei=xYz1&iflsig=AL9hbdgAAAAA&ved=0ahUKEwiAbCdEf&uact=5&oq=random+forest+vs&sclient=gws-wiz,google_search,long query
+https://www.google.com/search?q=pune+to+mumbai+train+timings+tomorrow&oq=pune+to+mumbai+train&sourceid=chrome&ie=UTF-8,google_search,
+https://www.google.co.in/search?q=sbi+net+banking+login+problem&ie=UTF-8&oe=UTF-8,google_search,query contains login/banking words
+"https://www.google.com/maps/place/MIT+Academy+of+Engineering/@18.6774,73.8975,17z/data=!3m1!4b1!4m6!3m5!1s0x3bc2c7a1b0e6f0b1:0x1a2b3c4d5e6f7a8b!8m2!3d18.6774!4d73.9001",google_maps,place IDs illustrative
+https://mail.google.com/mail/u/0/#inbox,email,
+https://www.youtube.com/watch?v=aircAruvnKk,youtube,
+https://www.youtube.com/watch?v=J4Wdy0Wc_xQ&list=PLblh5JKOoLUICTaGLRoHQDuF_7q2GfuJF&index=3,youtube,playlist parameters
+https://www.youtube.com/results?search_query=fastapi+docker+deployment+tutorial,youtube,
+https://www.youtube.com/@3blue1brown/videos,youtube,
+https://github.com/scikit-learn/scikit-learn,github,
+https://github.com/scikit-learn/scikit-learn/issues/29470,github,issue number illustrative
+https://github.com/pandas-dev/pandas/pull/58123/files,github,PR number illustrative
+https://github.com/fastapi/fastapi/blob/master/README.md,github,
+https://stackoverflow.com/questions/231767/what-does-the-yield-keyword-do-in-python,stackoverflow,
+https://stackoverflow.com/questions/419163/what-does-if-name-main-do,stackoverflow,
+https://stackoverflow.com/questions/tagged/pandas?tab=Votes,stackoverflow,
+https://docs.google.com/document/d/1A2b3C4d5E6f7G8h9I0jKlMnOpQrStUvWxYz123456/edit,google_docs,document id illustrative
+https://docs.google.com/spreadsheets/d/1Zx9Yw8Vu7Ts6Rq5Po4Nm3Lk2Ji1Hg0Fe9Dc8Ba76543/edit#gid=0,google_docs,sheet id illustrative
+https://docs.google.com/presentation/d/1QwErTyUiOpAsDfGhJkLzXcVbNm1234567890abcdE/edit?usp=sharing,google_docs,slides id illustrative
+https://docs.google.com/forms/d/e/1FAIpQLSd1a2b3c4d5e6f7g8h9i0jklmnopqrstuvwx/viewform,google_docs,legit Google Form (forms are also abused by phishers)
+https://drive.google.com/file/d/1aBcD3eFgH4iJkL5mNoP6qRsT7uVwX8yZ/view?usp=sharing,google_drive,file id illustrative
+https://drive.google.com/drive/folders/1AbCdEfGhIjKlMnOpQrStUvWxYz012345?usp=drive_link,google_drive,folder id illustrative
+https://colab.research.google.com/drive/1aBcDeFgHiJkLmNoPqRsTuVwXyZ012345,google_drive,notebook id illustrative
+https://www.amazon.in/Apple-MacBook-Chip-13-inch-256GB/dp/B08N5W4NNB/ref=sr_1_3?crid=2ABCDEF&keywords=macbook+air&qid=1732450000&sr=8-3,shopping,product page /dp/
+https://www.amazon.in/s?k=wireless+mouse&ref=nb_sb_noss,shopping,
+https://www.amazon.in/gp/cart/view.html?ref_=nav_cart,shopping,
+https://www.flipkart.com/samsung-galaxy-m35-5g-thunder-grey-128-gb/p/itm4a5b6c7d8e9f0?pid=MOBH4ABCDEF12345&lid=LSTMOBH4ABCDEF12345XYZ&marketplace=FLIPKART,shopping,product ids illustrative
+https://www.flipkart.com/search?q=laptop+bag&otracker=search&marketplace=FLIPKART,shopping,
+https://en.wikipedia.org/wiki/Random_forest,wikipedia,
+https://en.wikipedia.org/wiki/Phishing,wikipedia,article about phishing
+https://hi.wikipedia.org/wiki/%E0%A4%AD%E0%A4%BE%E0%A4%B0%E0%A4%A4,wikipedia,Hindi Wikipedia (percent-encoded path)
+https://www.linkedin.com/feed/,social,
+https://www.linkedin.com/jobs/view/4012345678/?refId=abc123&trackingId=xyz789,social,job id illustrative
+https://www.instagram.com/natgeo/,social,
+https://www.instagram.com/p/C9aBcDeFgHi/,social,post id illustrative
+https://x.com/NASA/status/1858123456789012345,social,status id illustrative
+https://www.reddit.com/r/MachineLearning/comments/1gq2abc/d_how_do_you_handle_label_noise_in_url_datasets/,social,post id illustrative
+https://web.whatsapp.com/,social,
+https://retail.onlinesbi.sbi/retail/login.htm,bank,SBI personal banking login
+https://www.onlinesbi.sbi/,bank,
+https://www.hdfcbank.com/personal/pay/cards/credit-cards,bank,
+https://netbanking.hdfcbank.com/netbanking/,bank,
+https://www.icicibank.com/personal-banking/accounts/savings-account,bank,
+https://infinity.icicibank.com/corp/AuthenticationController?FORMSGROUP_ID__=AuthenticationFG&__START_TRAN_FLAG__=Y&FG_BUTTONS__=LOAD&ACTION.LOAD=Y&AuthenticationFG.LOGIN_FLAG=1&BANK_ID=ICI,bank,ICICI net banking login with long query
+https://uidai.gov.in/en/my-aadhaar/get-aadhaar.html,government,
+https://myaadhaar.uidai.gov.in/,government,
+https://www.incometax.gov.in/iec/foportal/,government,
+https://eportal.incometax.gov.in/iec/foservices/#/login,government,
+https://www.irctc.co.in/nget/train-search,government,
+https://www.digilocker.gov.in/,government,
+https://mitaoe.ac.in/,education,
+https://mitaoe.ac.in/Computer-Engineering.php,education,path illustrative
+https://nptel.ac.in/courses/106106139,education,
+https://onlinecourses.nptel.ac.in/noc25_cs45/preview,education,
+https://www.coursera.org/learn/machine-learning?specialization=machine-learning-introduction,education,
+https://www.coursera.org/specializations/deep-learning,education,
+https://www.geeksforgeeks.org/machine-learning/,education,
+https://leetcode.com/problems/two-sum/,education,
+https://www.kaggle.com/datasets/sid321axn/malicious-urls-dataset,education,
+https://archive.ics.uci.edu/dataset/967/phiusiil+phishing+url+dataset,education,
+https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin,login,legit login with embedded URL in query
+https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=4765445b-32c6-49b0-83e6-1d93765276ca&redirect_uri=https%3A%2F%2Fwww.office.com%2Flandingv2&response_type=code%20id_token&scope=openid%20profile&response_mode=form_post,login,legit Microsoft 365 login
+https://www.paypal.com/signin,login,legit PayPal login
+https://www.paypal.com/in/signin?returnUri=%2Fmyaccount%2Fsummary,login,
+https://appleid.apple.com/sign-in,login,legit Apple ID login
+https://www.netflix.com/in/login,login,
+https://www.netflix.com/login,login,
+https://github.com/login,login,
+https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fsettings%2Fprofile,login,
+https://www.amazon.in/ap/signin?openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.in%2F&openid.assoc_handle=inflex&openid.mode=checkid_setup,login,legit Amazon sign-in with long query
+https://www.facebook.com/login/,login,
+https://www.instagram.com/accounts/login/,login,
+https://outlook.live.com/mail/0/inbox,email,
+https://www.office.com/?auth=2,other,
+https://youtu.be/aircAruvnKk,shortener,official YouTube shortener
+https://youtu.be/dQw4w9WgXcQ?si=AbCdEfGh12345678,shortener,share link with si parameter
+https://amzn.to/3XyZ9aB,shortener,official Amazon shortener; id illustrative
+https://forms.gle/AbCdEfGh12345678,shortener,official Google Forms shortener; id illustrative
+https://www.zomato.com/pune/restaurants,other,
+https://www.swiggy.com/,other,
+https://paytm.com/,other,
+https://www.phonepe.com/,other,
+https://zoom.us/j/91234567890?pwd=AbCdEfGh123,other,meeting id illustrative
+https://meet.google.com/abc-defg-hij,other,meeting code illustrative
+https://www.makemytrip.com/flights/,other,

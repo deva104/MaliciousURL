@@ -18,6 +18,8 @@ data/processed/*
 # (feature_extractor.joblib, scaler.joblib, ~40 KB) ARE committed for the API.
 models/*_large.joblib
 models/*.pkl.gz
+# Step 2 training cache (every fitted model + its predictions); recreated by notebook 02
+models/cache/
 
 # OS / editor
 .DS_Store
